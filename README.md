@@ -14,7 +14,6 @@ My Portfolio/
 ├── style.css                  # All styling
 ├── script.js                  # Core site interactions
 ├── three-scene.js             # Three.js background scene (ES module)
-├── WIRING.md                  # Notes on how the Three.js canvas is wired into the page
 ├── Resume_Bedjaoui_Hadjer.pdf # Downloadable resume
 ├── images/
 │   ├── img.jpg
