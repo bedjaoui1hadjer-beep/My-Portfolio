@@ -1353,7 +1353,10 @@ html, body {
   }
 
   .ul-list li a {
-    display: none;
+    font-size: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .ul-list li i {
