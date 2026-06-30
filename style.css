@@ -1349,18 +1349,19 @@ html, body {
   }
 
   .ul-list li {
+    position: relative;
     padding: 6px 8px;
   }
 
   .ul-list li a {
+    position: absolute;
+    inset: 0;
     font-size: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .ul-list li i {
     font-size: 16px;
+    pointer-events: none;
   }
 
   .home {
