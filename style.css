@@ -1014,6 +1014,28 @@ hr {
   transition: all 1.2s ease;
 }
 
+/* Stagger card reveals within grids */
+.projects-container .project-card:nth-child(2),
+.services-grid .service-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.projects-container .project-card:nth-child(3),
+.services-grid .service-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.projects-container .project-card:nth-child(4),
+.services-grid .service-card:nth-child(4) {
+  transition-delay: 0.3s;
+}
+.projects-container .project-card:nth-child(5),
+.services-grid .service-card:nth-child(5) {
+  transition-delay: 0.4s;
+}
+.projects-container .project-card:nth-child(6),
+.services-grid .service-card:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
 .glow-genz-button{
     color: #fff;
 }
