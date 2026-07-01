@@ -1,16 +1,11 @@
 
-
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
-// =================================================================
-// CONFIG
-// =================================================================
-
-const MODEL_PATH = "assets/models/model.glb"; // swap model here later (relative path so it works regardless of server root)
-const DEBUG_ORBIT_CONTROLS = false; // flip to true locally only, never in prod
+const MODEL_PATH = "assets/models/model.glb";
+const DEBUG_ORBIT_CONTROLS = false;
 
 const SECTION_IDS = ["home", "about", "project", "service", "contact"];
 
@@ -22,31 +17,21 @@ const SECTION_POSES = {
   contact: { position: [-0.7, 0, 0],        rotationY: 0.1,  scale: 1.5 },
 };
 
-// =================================================================
-// STATE
-// =================================================================
-
 let scene, camera, renderer, controls, clock;
 let model = null;
 let canvas;
 
-let currentScroll = 0; // smoothed, normalized 0..1
-let targetScroll = 0;  // raw, normalized 0..1
+let currentScroll = 0;
+let targetScroll = 0;
 
-// Mouse parallax (bonus) — heavily smoothed, capped to a few pixels
 let mouseX = 0, mouseY = 0;
 let smoothMouseX = 0, smoothMouseY = 0;
 
-// Reused objects (avoid per-frame allocation)
 const _tmpPosition = new THREE.Vector3();
 const _tmpCameraTarget = new THREE.Vector3();
 const _basePosition = new THREE.Vector3();
 
 let isMobile = window.innerWidth < 768;
-
-// =================================================================
-// INIT
-// =================================================================
 
 function initScene() {
   canvas = document.getElementById("three-canvas");
@@ -61,15 +46,12 @@ function initScene() {
   renderer = new THREE.WebGLRenderer({
     canvas,
     antialias: true,
-    alpha: true, // transparent so it never covers the existing site background
+    alpha: true,
   });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  // updateStyle = false: only sets the canvas drawing-buffer (width/height
-  // attributes), never an inline CSS width/height. The stylesheet's
-  // #three-canvas rule (100% + inset:0) is the single source of truth for
-  // the canvas's visual size, so it can never drift wider than the viewport.
+
   renderer.setSize(window.innerWidth, window.innerHeight, false);
-  renderer.setClearAlpha(0); // fully transparent background, per requirement
+  renderer.setClearAlpha(0);
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -90,13 +72,9 @@ function initScene() {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("mousemove", onMouseMove, { passive: true });
 
-  onScroll(); // set initial scroll target
+  onScroll();
   return true;
 }
-
-// =================================================================
-// CAMERA
-// =================================================================
 
 function setupCamera() {
   camera = new THREE.PerspectiveCamera(
@@ -107,10 +85,6 @@ function setupCamera() {
   );
   camera.position.set(0, 0, 6);
 }
-
-// =================================================================
-// LIGHTING
-// =================================================================
 
 function setupLights() {
   const ambient = new THREE.AmbientLight(0xffffff, 0.4);
@@ -127,15 +101,10 @@ function setupLights() {
   const hemi = new THREE.HemisphereLight(0xddeeff, 0x222233, 0.6);
   scene.add(hemi);
 
-  // Rim light — a second directional light from behind/opposite side
   const rim = new THREE.DirectionalLight(0x88aaff, 0.8);
   rim.position.set(-4, 2, -4);
   scene.add(rim);
 }
-
-// =================================================================
-// MODEL LOADING
-// =================================================================
 
 function loadModel() {
   const dracoLoader = new DRACOLoader();
@@ -169,21 +138,13 @@ function loadModel() {
   );
 }
 
-// =================================================================
-// SCROLL HANDLING
-// (raw scrollY is sampled here ONLY to compute a normalized target;
-// it is never used directly to drive any animation values)
-// =================================================================
-
 function onScroll() {
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   targetScroll = maxScroll > 0 ? window.scrollY / maxScroll : 0;
 }
 
 function getActiveSectionBlend() {
-  // Find which two sections currentScroll sits between, and a 0..1
-  // blend factor, so poses interpolate smoothly across the whole page
-  // rather than snapping at section boundaries.
+
   const sectionEls = SECTION_IDS
     .map((id) => document.getElementById(id))
     .filter(Boolean);
@@ -214,7 +175,7 @@ function getActiveSectionBlend() {
 }
 
 function updateScroll(delta) {
-  // Smooth scroll progress — this is the ONLY value used for animation
+
   currentScroll += (targetScroll - currentScroll) * 0.08;
 
   if (!model) return;
@@ -232,7 +193,6 @@ function updateScroll(delta) {
   const targetScale =
     THREE.MathUtils.lerp(from.scale, to.scale, t) * mobileScale;
 
-  // Idle floating motion layered on top of the scroll-driven base pose
   const time = clock.getElapsedTime();
   const floatY = Math.sin(time * 0.6) * 0.08;
   const idleRotation = Math.sin(time * 0.3) * 0.05;
@@ -247,19 +207,10 @@ function updateScroll(delta) {
   );
 }
 
-// =================================================================
-// MOUSE PARALLAX (bonus, optional — safe to delete this block + the
-// onMouseMove listener + the two lines inside animate() that use it)
-// =================================================================
-
 function onMouseMove(e) {
   mouseX = (e.clientX / window.innerWidth) * 2 - 1;
   mouseY = (e.clientY / window.innerHeight) * 2 - 1;
 }
-
-// =================================================================
-// ANIMATE
-// =================================================================
 
 function animate() {
   requestAnimationFrame(animate);
@@ -267,7 +218,6 @@ function animate() {
   const delta = clock.getDelta();
   updateScroll(delta);
 
-  // Smoothed mouse parallax, capped to a few pixels of camera offset
   smoothMouseX += (mouseX - smoothMouseX) * 0.05;
   smoothMouseY += (mouseY - smoothMouseY) * 0.05;
 
@@ -280,10 +230,6 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-// =================================================================
-// RESIZE
-// =================================================================
-
 function onResize() {
   isMobile = window.innerWidth < 768;
 
@@ -293,10 +239,6 @@ function onResize() {
   renderer.setSize(window.innerWidth, window.innerHeight, false);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 }
-
-// =================================================================
-// BOOT
-// =================================================================
 
 if (initScene()) {
   animate();

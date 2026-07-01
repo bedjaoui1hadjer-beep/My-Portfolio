@@ -1,40 +1,3 @@
-window.addEventListener("load", () => {
-
-    const animations = [
-        { selector: ".top-tags", class: "from-top", delay: 0 },
-        { selector: ".left h1", class: "from-left", delay: 0.3 },
-        { selector: ".desc", class: "from-left", delay: 0.6 },
-        { selector: ".live-line", class: "from-bottom", delay: 0.9 },
-        { selector: ".buttons", class: "zoom-in", delay: 1.2 },
-        { selector: ".site-link", class: "from-bottom", delay: 1.5 },
-        { selector: ".right", class: "from-right", delay: 0.6 },
-        { selector: ".stats", class: "from-bottom", delay: 1.8 },
-    ];
-
-    animations.forEach(item => {
-        const el = document.querySelector(item.selector);
-        if (el) {
-            el.style.animationDelay = `${item.delay}s`;
-            el.classList.add(item.class);
-        }
-    });
-
-  const button = document.getElementById("enter-btn");
-
-button.addEventListener("click", () => {
-    const intro = document.getElementById("intro");
-    const site = document.getElementById("real-site");
-
-    intro.classList.add("smooth-out");
-
-    setTimeout(() => {
-        intro.style.display = "none";
-        site.style.display = "block";
-        initScrollAnimations();
-    }, 1200);
-});
-});
-
 function initScrollAnimations() {
     const elements = document.querySelectorAll(
         ".slide-in-left, .slide-in-right, .slide-in-up"
@@ -55,6 +18,8 @@ function initScrollAnimations() {
 
     elements.forEach(el => observer.observe(el));
 }
+
+initScrollAnimations();
 
 const sections = document.querySelectorAll("section");
 const navItems = document.querySelectorAll(".ul-list li");
@@ -99,9 +64,9 @@ const downloadBtn = document.getElementById("downloadCvBtn");
 if (downloadBtn) {
     downloadBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        
+
         const link = document.createElement("a");
-        link.href = "Resume_Bedjaoui_Hadjer.pdf"; 
+        link.href = "Resume_Bedjaoui_Hadjer.pdf";
         link.download = "Hadjer_Bedjaoui_CV.pdf";
         link.click();
     });

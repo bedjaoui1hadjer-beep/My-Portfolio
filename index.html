@@ -7,6 +7,7 @@
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
@@ -18,58 +19,14 @@
   }
 }
 </script>
+
 </head>
 
 <body>
 
 <canvas id="three-canvas"></canvas>
 
-<div id="intro">
-<div class="main">
-    <div class="card">
-        <div class="content">
-            <div class="left">
-                <h1>
-                    Welcome to <br>
-                    my Portfolio <br>
-                    Website
-                </h1><br>
-
-                <p class="desc">
-                    Building modern, reliable, and fast digital experiences with a
-                    focus on clean UI and solid engineering.
-                </p><br>
-                <button class="btn" id="enter-btn"><i class="fa-solid fa-code"></i>Enter</button>
-            </div>
-
-            <div class="right">
-                <div class="right-head">
-                    <span>CORE UI</span>
-                    <span class="online">ONLINE</span>
-                </div>
-
-                <div class="orbit-box">
-                    <div class="orbit">
-                        <i class="fa-solid fa-layer-group i1"></i>
-                        <i class="fa-solid fa-bolt i2"></i>
-                        <i class="fa-solid fa-code i3"></i>
-                        <i class="fa-solid fa-wifi i4"></i>
-                    </div>
-
-                    <div class="core">
-                        <span>WELCOME</span>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-</div>
-
-
-<div id="real-site" style="display: none;">
+<div id="real-site">
     <header>
         <div class="div-list ">
             <ul class="ul-list">
@@ -80,6 +37,10 @@
                 <li>
                     <i class="fa-regular fa-address-card"></i>
                     <a href="#about">About</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <a href="#skills">Skills</a>
                 </li>
                 <li>
                     <i class="fa-regular fa-folder-open"></i>
@@ -104,9 +65,9 @@
         <div class="home-section">
             <div class="info-home">
                 <h1>Hi, I'm Hadjer</h1>
-                <h3>Full-Stack Developer & CS Student</h3>
+                <h3>Full-Stack Developer • Mobile App Developer • Software Engineer</h3>
                 <div class="info-p">
-                   <p>Passionate and detail-oriented Computer Science student specializing in full-stack web development, modern UI/UX design, and software engineering. Experienced in building complete web platforms, AI-integrated systems, and database-driven applications. Strong background in OOP, responsive design, workflow automation, and scalable application architecture.</p>
+                   <p>Full-Stack and Mobile Developer specializing in scalable web applications, AI-powered platforms, and cross-platform mobile development. I combine clean architecture, modern UI/UX, and efficient backend engineering to build fast, secure, and production-ready software.</p>
                 </div>
                 <div class="info-p2">
                     <p><i class="fa-solid fa-location-dot"></i> Based in Annaba, Algeria</p>
@@ -115,6 +76,7 @@
                 <div class="btnn">
                     <button class="btn-home1" id="hireMeBtn"><i class="fa-solid fa-arrow-right"></i> Hire Me</button>
                     <button class="btn-home2" id="downloadCvBtn"><i class="fa-solid fa-download"></i> Download CV</button>
+                    <a href="Resume_Bedjaoui_Hadjer.pdf" target="_blank" class="btn-home2"><i class="fa-solid fa-file-lines"></i> View Resume</a>
                 </div>
                 <div class="hhr">
                     <hr>
@@ -129,7 +91,11 @@
                 </div>
             </div>
           </div>
-          <img src="images/img.jpg" >
+          <div class="photo-container slide-in-right">
+                <img src="images/img.jpg" alt="">
+                <span class="tape tape1"></span>
+                <span class="tape tape2"></span>
+            </div>
         </div>
     </section>
          <section class="about reveal" id="about">
@@ -139,24 +105,179 @@
             </div>
             <div class="info-text">
                 <h5>@Hadjer</h5>
-                <p>Full-Stack Developer & CS Student</p>
+                <p>Full-Stack & Mobile Developer</p>
             </div>
         </div>
         <h3>ABOUT ME</h3>
         <div class="about-info2">
             <div class="about-text slide-in-left">
-                <p>Hi! I'm Bedjaoui Hadjer, a Full-Stack Developer <br> based in Annaba, Algeria.</p>
-                <p>I am a Computer Science student at University Badji Mokhtar, expected to graduate in 2026. I specialize in building complete web platforms and AI-powered systems, combining modern frontend design with solid backend engineering.</p>
-                <p>My stack spans HTML5, CSS3, JavaScript, React.js, PHP, MySQL, Java, Python, and more. I'm experienced in REST APIs, OOP, responsive design, database architecture, workflow automation with n8n, and Docker basics — always focused on clean architecture and professional user experiences.</p>
-                <p>As a fast learner and proactive builder, I continuously expand my skills to stay aligned with industry trends — from AI-integrated platforms to scalable full-stack applications.</p>
+                <p>Hi! I'm Bedjaoui Hadjer, a Full-Stack and Mobile Developer <br> based in Annaba, Algeria.</p>
+                <p>I'm Bedjaoui Hadjer, a Full-Stack and Mobile Developer with a Bachelor's Degree in Computer Science.</p>
+                <p>I build scalable web applications, mobile apps, REST APIs, and AI-powered systems. I enjoy creating clean architectures, modern UI/UX, and high-performance software using PHP, Laravel, React, Flutter, MySQL, Java, and automation tools.</p>
+                <p>As a fast learner and proactive builder, I continuously expand my skills to stay aligned with industry trends — from AI-integrated platforms to scalable full-stack and mobile applications.</p>
             </div>
-            <div class="photo-container slide-in-right">
-                <img src="images/img.jpg" alt="">
-                <span class="tape tape1"></span>
-                <span class="tape tape2"></span>
+            
+
+            <div class="right">
+                <div class="right-head">
+                    <span>CORE UI</span>
+                    <span class="online">ONLINE</span>
+                </div>
+
+                <div class="orbit-box">
+                    <div class="orbit">
+                        <i class="fa-solid fa-layer-group i1"></i>
+                        <i class="fa-solid fa-bolt i2"></i>
+                        <i class="fa-solid fa-code i3"></i>
+                        <i class="fa-solid fa-wifi i4"></i>
+                    </div>
+
+                    <div class="core">
+                        <span>WELCOME</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <section class="stats-section reveal" id="stats">
+        <div class="stats-grid">
+            <div class="stat-item slide-in-up">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item slide-in-up">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-item slide-in-up">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Years Learning</span>
+            </div>
+            <div class="stat-item slide-in-up">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Responsive Designs</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section reveal" id="skills">
+        <p>SKILLS</p>
+        <h1>What I Work With</h1>
+        <hr>
+        <div class="skills-grid">
+            <div class="skill-category slide-in-up">
+                <h3><i class="fa-solid fa-code"></i> Languages</h3>
+                <div class="skill-tags">
+                    <span>JavaScript</span>
+                    <span>PHP</span>
+                    <span>Java</span>
+                    <span>Python</span>
+                    <span>Dart</span>
+                    <span>SQL</span>
+                    <span>C</span>
+                    <span>C++</span>
+                </div>
+            </div>
+            <div class="skill-category slide-in-up">
+                <h3><i class="fa-solid fa-display"></i> Frontend</h3>
+                <div class="skill-tags">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>React</span>
+                    <span>Flutter</span>
+                    <span>Responsive Design</span>
+                </div>
+            </div>
+            <div class="skill-category slide-in-up">
+                <h3><i class="fa-solid fa-server"></i> Backend</h3>
+                <div class="skill-tags">
+                    <span>Laravel</span>
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>REST APIs</span>
+                    <span>Authentication</span>
+                </div>
+            </div>
+            <div class="skill-category slide-in-up">
+                <h3><i class="fa-solid fa-toolbox"></i> Tools</h3>
+                <div class="skill-tags">
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>Docker</span>
+                    <span>VS Code</span>
+                    <span>XAMPP</span>
+                    <span>n8n</span>
+                </div>
+            </div>
+            <div class="skill-category slide-in-up">
+                <h3><i class="fa-solid fa-lightbulb"></i> Concepts</h3>
+                <div class="skill-tags">
+                    <span>OOP</span>
+                    <span>MVC</span>
+                    <span>Clean Architecture</span>
+                    <span>API Design</span>
+                    <span>Data Structures</span>
+                    <span>UI/UX</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-icons-grid">
+            <div class="tech-icon"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+            <div class="tech-icon"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+            <div class="tech-icon"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+            <div class="tech-icon"><i class="devicon-react-original colored"></i><span>React</span></div>
+            <div class="tech-icon"><i class="devicon-laravel-plain colored"></i><span>Laravel</span></div>
+            <div class="tech-icon"><i class="devicon-flutter-plain colored"></i><span>Flutter</span></div>
+            <div class="tech-icon"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+            <div class="tech-icon"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+            <div class="tech-icon"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+            <div class="tech-icon"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+            <div class="tech-icon"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+            <div class="tech-icon"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+        </div>
+    </section>
+
+    <section class="timeline-section reveal" id="timeline">
+        <p>JOURNEY</p>
+        <h1>Timeline</h1>
+        <hr>
+        <div class="timeline">
+            <div class="timeline-item slide-in-left">
+                <span class="timeline-date">2026</span>
+                <div class="timeline-content">
+                    <h3>Bachelor's Degree in Computer Science</h3>
+                </div>
+            </div>
+            <div class="timeline-item slide-in-right">
+                <span class="timeline-date">2025–2026</span>
+                <div class="timeline-content">
+                    <h3>PSYRA AI Platform</h3>
+                </div>
+            </div>
+            <div class="timeline-item slide-in-left">
+                <span class="timeline-date">2025</span>
+                <div class="timeline-content">
+                    <h3>DZHouse</h3>
+                </div>
+            </div>
+            <div class="timeline-item slide-in-right">
+                <span class="timeline-date">2025</span>
+                <div class="timeline-content">
+                    <h3>Java Desktop System</h3>
+                </div>
+            </div>
+            <div class="timeline-item slide-in-left">
+                <span class="timeline-date">2025</span>
+                <div class="timeline-content">
+                    <h3>Flutter Mobile Apps</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
      <section class="project  reveal" id="project">
         <p>PROJECTS</p>
         <h1>Featured Work</h1>
@@ -189,11 +310,13 @@
       <h3>PSYRA — AI Mental Health Platform</h3>
       <p>AI-powered mental health support platform with intelligent workflow orchestration via n8n, conversational AI flows, scalable frontend design, and clean UI/UX architecture.</p>
       <div class="skills">
-        <a href="#">JavaScript</a>
+        <a href="#">Laravel</a>
         <a href="#">PHP</a>
         <a href="#">MySQL</a>
+        <a href="#">JavaScript</a>
+        <a href="#">AI</a>
         <a href="#">n8n</a>
-        <a href="#">AI Workflows</a>
+        <a href="#">REST API</a>
       </div>
       <div class="btns">
         <a href="https://github.com/bedjaoui1hadjer-beep/Psyra" class="btn"><i class="fab fa-github"></i> GitHub</a>
@@ -202,14 +325,47 @@
     </div>
 
     <div class="project-card slide-in-up">
-      <img src="images/Weather Forecast Dashboard.jpg" alt="Java OOP System">
-      <h3>Java OOP Management System</h3>
-      <p>Desktop application built with Java OOP principles — inheritance, abstraction, polymorphism, and exception handling — with a Java Swing GUI and MySQL database integration.</p>
+      <img src="images/Task manager app.jpg" alt="Flutter Mobile Applications">
+      <h3>Flutter Mobile Applications</h3>
+      <p>Cross-platform mobile applications built with Flutter and Dart. Integrated REST APIs, authentication, local storage, and responsive UI.</p>
       <div class="skills">
-        <a href="#">Java</a>
-        <a href="#">Swing</a>
+        <a href="#">Flutter</a>
+        <a href="#">Dart</a>
+        <a href="#">REST API</a>
+        <a href="#">Firebase</a>
+      </div>
+      <div class="btns">
+        <a href="#" class="btn"><i class="fab fa-github"></i> GitHub</a>
+        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card slide-in-up">
+      <img src="images/Weather Forecast Dashboard.jpg" alt="Laravel REST API">
+      <h3>Laravel REST API</h3>
+      <p>Secure, well-structured REST API built with Laravel, featuring authentication, resource controllers, request validation, and MySQL data modeling for full-stack applications.</p>
+      <div class="skills">
+        <a href="#">Laravel</a>
+        <a href="#">PHP</a>
         <a href="#">MySQL</a>
-        <a href="#">OOP</a>
+        <a href="#">REST API</a>
+        <a href="#">Authentication</a>
+      </div>
+      <div class="btns">
+        <a href="#" class="btn"><i class="fab fa-github"></i> GitHub</a>
+        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card slide-in-up">
+      <img src="images/Game Dashboard Design.jpg" alt="AI Assistant">
+      <h3>AI Assistant</h3>
+      <p>Intelligent conversational assistant powered by AI workflow automation, integrating n8n orchestration, REST APIs, and natural language processing for smart, automated responses.</p>
+      <div class="skills">
+        <a href="#">AI</a>
+        <a href="#">n8n</a>
+        <a href="#">JavaScript</a>
+        <a href="#">API</a>
       </div>
       <div class="btns">
         <a href="#" class="btn"><i class="fab fa-github"></i> GitHub</a>
@@ -231,40 +387,47 @@
         <a href="https://my-portfolio-e61.pages.dev/" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
       </div>
     </div>
-
-    <div class="project-card slide-in-up">
-      <img src="images/Game Dashboard Design.jpg" alt="UI Components Library">
-      <h3>UI Components & Dashboards</h3>
-      <p>Collection of reusable UI components and admin dashboards including data visualizations with Chart.js, therapist panels, and interactive analytics interfaces.</p>
-      <div class="skills">
-        <a href="#">HTML</a>
-        <a href="#">CSS</a>
-        <a href="#">Chart.js</a>
-        <a href="#">JS</a>
-      </div>
-      <div class="btns">
-        <a href="#" class="btn"><i class="fab fa-github"></i> GitHub</a>
-        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-      </div>
-    </div>
-
-    <div class="project-card slide-in-up">
-      <img src="images/Task manager app.jpg" alt="Workflow Automation">
-      <h3>Workflow Automation Projects</h3>
-      <p>Automated workflow systems using n8n for chat orchestration, form handling, escalation pipelines, and AI-assisted interactions integrated into web platforms.</p>
-      <div class="skills">
-        <a href="#">n8n</a>
-        <a href="#">JavaScript</a>
-        <a href="#">API</a>
-        <a href="#">AI</a>
-      </div>
-      <div class="btns">
-        <a href="#" class="btn"><i class="fab fa-github"></i> GitHub</a>
-        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-      </div>
-    </div>
   </div>
      </section>
+
+    <section class="why-hire-section reveal" id="why-hire">
+        <p>WHY ME</p>
+        <h1>Why Hire Me?</h1>
+        <hr>
+        <div class="why-hire-grid">
+            <div class="why-hire-card slide-in-up">
+                <i class="fa-solid fa-code"></i>
+                <h3>Clean Code</h3>
+                <p>Readable, maintainable code following best practices and clean architecture principles.</p>
+            </div>
+            <div class="why-hire-card slide-in-up">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h3>Responsive Design</h3>
+                <p>Interfaces that look and work great on every screen, from desktop to mobile.</p>
+            </div>
+            <div class="why-hire-card slide-in-up">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Fast Performance</h3>
+                <p>Optimized applications built for speed, efficiency, and a smooth user experience.</p>
+            </div>
+            <div class="why-hire-card slide-in-up">
+                <i class="fa-solid fa-brain"></i>
+                <h3>AI Integration</h3>
+                <p>Practical AI and automation workflows that add real value to products.</p>
+            </div>
+            <div class="why-hire-card slide-in-up">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>Full-Stack Expertise</h3>
+                <p>Comfortable across web, mobile, backend, and database layers of a project.</p>
+            </div>
+            <div class="why-hire-card slide-in-up">
+                <i class="fa-solid fa-comments"></i>
+                <h3>Strong Communication</h3>
+                <p>Clear, proactive communication that keeps projects on track from start to finish.</p>
+            </div>
+        </div>
+    </section>
+
         <section id="service" class="section services reveal">
             <p>SERVICES</p>
             <h1>What I Offer</h1>
@@ -334,6 +497,42 @@
                         </div>
                         <div class="service-card slide-in-up">
                             <div class="service-icon">
+                                <i class="fas fa-mobile-screen-button"></i>
+                            </div>
+                            <h3>Mobile App Development</h3>
+                            <p>Building cross-platform mobile applications with Flutter and Dart — integrated REST APIs, authentication, local storage, and responsive, native-feeling UI.</p>
+                            <div class="service-features">
+                                <span>Flutter & Dart</span>
+                                <span>Cross-Platform</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                        <div class="service-card slide-in-up">
+                            <div class="service-icon">
+                                <i class="fab fa-laravel"></i>
+                            </div>
+                            <h3>Laravel Development</h3>
+                            <p>Building robust backend systems and web applications with Laravel — clean MVC architecture, Eloquent ORM, authentication, and secure, scalable APIs.</p>
+                            <div class="service-features">
+                                <span>Laravel</span>
+                                <span>MVC</span>
+                                <span>Eloquent ORM</span>
+                            </div>
+                        </div>
+                        <div class="service-card slide-in-up">
+                            <div class="service-icon">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <h3>REST API Development</h3>
+                            <p>Designing and building secure, well-documented REST APIs with proper authentication, validation, and clean resource structures for web and mobile clients.</p>
+                            <div class="service-features">
+                                <span>REST APIs</span>
+                                <span>Authentication</span>
+                                <span>API Design</span>
+                            </div>
+                        </div>
+                        <div class="service-card slide-in-up">
+                            <div class="service-icon">
                                 <i class="fas fa-laptop-code"></i>
                             </div>
                             <h3>Desktop App Development</h3>
@@ -348,6 +547,7 @@
                 </div>
             </div>
         </section>
+
          <section id="contact" class="section reveal">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
@@ -390,11 +590,11 @@
                     </div>
                     <div class="contact-form slide-in-right">
                         <form id="contact-form" action="https://formsubmit.co/bedjaoui1hadjer@gmail.com" method="POST">
-                            <!-- FormSubmit config (no backend needed) -->
+                            
                             <input type="hidden" name="_subject" value="New message from your portfolio">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_captcha" value="false">
-                            <!-- honeypot field to cut down on bot spam -->
+                            
                             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
                             <div class="form-group">
