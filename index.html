@@ -98,6 +98,7 @@
             </div>
         </div>
     </section>
+
          <section class="about reveal" id="about">
         <div class="about-info slide-in-up">
             <div class="img-about">
@@ -166,63 +167,37 @@
         <p>SKILLS</p>
         <h1>What I Work With</h1>
         <hr>
-        <div class="skills-grid">
-            <div class="skill-category slide-in-up">
-                <h3><i class="fa-solid fa-code"></i> Languages</h3>
-                <div class="skill-tags">
-                    <span>JavaScript</span>
-                    <span>PHP</span>
-                    <span>Java</span>
-                    <span>Python</span>
-                    <span>Dart</span>
-                    <span>SQL</span>
-                    <span>C</span>
-                    <span>C++</span>
+
+        <div class="scroll-video-section" id="scroll-video">
+            <div class="scroll-video-sticky">
+                <div class="skill-category scroll-skill-card scroll-skill-card-left slide-in-up" id="scrollSkillsLeft">
+                    <h3><i class="fa-solid fa-code"></i> Languages</h3>
+                    <div class="skill-tags">
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>Dart</span>
+                        <span>SQL</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-category slide-in-up">
-                <h3><i class="fa-solid fa-display"></i> Frontend</h3>
-                <div class="skill-tags">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>React</span>
-                    <span>Flutter</span>
-                    <span>Responsive Design</span>
+                <canvas id="scrollVideoCanvas"></canvas>
+                <div class="skill-category scroll-skill-card scroll-skill-card-right slide-in-up" id="scrollSkillsRight">
+                    <h3><i class="fa-solid fa-display"></i> Frontend</h3>
+                    <div class="skill-tags">
+                        <span>HTML5 &amp; CSS3</span>
+                        <span>React</span>
+                        <span>Flutter</span>
+                        <span>Responsive Design</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-category slide-in-up">
-                <h3><i class="fa-solid fa-server"></i> Backend</h3>
-                <div class="skill-tags">
-                    <span>Laravel</span>
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                    <span>REST APIs</span>
-                    <span>Authentication</span>
-                </div>
-            </div>
-            <div class="skill-category slide-in-up">
-                <h3><i class="fa-solid fa-toolbox"></i> Tools</h3>
-                <div class="skill-tags">
-                    <span>Git</span>
-                    <span>GitHub</span>
-                    <span>Docker</span>
-                    <span>VS Code</span>
-                    <span>XAMPP</span>
-                    <span>n8n</span>
-                </div>
-            </div>
-            <div class="skill-category slide-in-up">
-                <h3><i class="fa-solid fa-lightbulb"></i> Concepts</h3>
-                <div class="skill-tags">
-                    <span>OOP</span>
-                    <span>MVC</span>
-                    <span>Clean Architecture</span>
-                    <span>API Design</span>
-                    <span>Data Structures</span>
-                    <span>UI/UX</span>
+                <div class="scroll-video-caption">
+                    <span>Scroll to explore</span>
+                    <i class="fa-solid fa-chevron-down"></i>
                 </div>
             </div>
         </div>
+
 
         <div class="tech-icons-grid">
     <div class="tech-icon"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
@@ -613,5 +588,6 @@
 </div>
 <script type="module" src="three-scene.js"></script>
 <script src="script.js"></script>
+<script src="scroll-video.js"></script>
 </body>
 </html>

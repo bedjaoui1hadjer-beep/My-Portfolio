@@ -53,7 +53,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         if (target) {
             window.scrollTo({
-                top: target.offsetTop - 120,
+                top: target.offsetTop+50,
                 behavior: "smooth"
             });
         }
