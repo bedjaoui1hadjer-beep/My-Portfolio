@@ -1,3 +1,65 @@
+(function initLanguageSwitcher() {
+    const STORAGE_KEY = "portfolio-lang";
+    const savedLang = localStorage.getItem(STORAGE_KEY);
+    window.currentLang = savedLang === "fr" ? "fr" : "en";
+
+    const textNodes = document.querySelectorAll("[data-fr]");
+    const placeholderNodes = document.querySelectorAll("[data-fr-placeholder]");
+
+    // Cache the original English text/placeholder once, so we can always
+    // toggle back cleanly regardless of how many times the button is used.
+    textNodes.forEach(el => {
+        if (!el.dataset.en) el.dataset.en = el.textContent;
+    });
+    placeholderNodes.forEach(el => {
+        if (!el.dataset.enPlaceholder) el.dataset.enPlaceholder = el.placeholder;
+    });
+
+    function applyLanguage(lang) {
+        window.currentLang = lang;
+        document.documentElement.lang = lang === "fr" ? "fr" : "en";
+
+        textNodes.forEach(el => {
+            el.textContent = lang === "fr" ? el.dataset.fr : el.dataset.en;
+        });
+        placeholderNodes.forEach(el => {
+            el.placeholder = lang === "fr" ? el.dataset.frPlaceholder : el.dataset.enPlaceholder;
+        });
+
+        const label = document.getElementById("langSwitcherLabel");
+        if (label) label.textContent = lang === "fr" ? "EN" : "FR";
+
+        const langBtn = document.getElementById("langSwitcher");
+        if (langBtn) {
+            langBtn.setAttribute(
+                "aria-label",
+                lang === "fr" ? "Switch to English" : "Traduire en français"
+            );
+            langBtn.setAttribute(
+                "title",
+                lang === "fr" ? "Switch to English" : "Traduire en français"
+            );
+        }
+
+        // Re-render the scroll-synced skill cards and re-run any pending
+        // contact-form status text in the newly selected language.
+        if (typeof window.refreshSkillPanelsLanguage === "function") {
+            window.refreshSkillPanelsLanguage();
+        }
+    }
+
+    applyLanguage(window.currentLang);
+
+    const langSwitcher = document.getElementById("langSwitcher");
+    if (langSwitcher) {
+        langSwitcher.addEventListener("click", () => {
+            const next = window.currentLang === "fr" ? "en" : "fr";
+            localStorage.setItem(STORAGE_KEY, next);
+            applyLanguage(next);
+        });
+    }
+})();
+
 function initScrollAnimations() {
     const elements = document.querySelectorAll(
         ".slide-in-left, .slide-in-right, .slide-in-up"
@@ -77,12 +139,28 @@ if (contactForm) {
     const statusEl = document.getElementById("contact-form-status");
     const submitBtn = document.getElementById("contact-submit-btn");
 
+    const FORM_MESSAGES = {
+        en: {
+            sending: "Sending...",
+            success: "Message sent! I'll get back to you soon.",
+            error: "Something went wrong. Please try again or email me directly."
+        },
+        fr: {
+            sending: "Envoi...",
+            success: "Message envoyé ! Je vous répondrai bientôt.",
+            error: "Une erreur s'est produite. Veuillez réessayer ou m'envoyer un email directement."
+        }
+    };
+
     contactForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
+        const lang = window.currentLang === "fr" ? "fr" : "en";
+        const messages = FORM_MESSAGES[lang];
+
         const originalBtnText = submitBtn.innerHTML;
         submitBtn.disabled = true;
-        submitBtn.innerHTML = "Sending...";
+        submitBtn.innerHTML = messages.sending;
         if (statusEl) {
             statusEl.textContent = "";
             statusEl.className = "";
@@ -97,7 +175,7 @@ if (contactForm) {
 
             if (response.ok) {
                 if (statusEl) {
-                    statusEl.textContent = "Message sent! I'll get back to you soon.";
+                    statusEl.textContent = messages.success;
                     statusEl.className = "form-status success";
                 }
                 contactForm.reset();
@@ -106,7 +184,7 @@ if (contactForm) {
             }
         } catch (err) {
             if (statusEl) {
-                statusEl.textContent = "Something went wrong. Please try again or email me directly.";
+                statusEl.textContent = messages.error;
                 statusEl.className = "form-status error";
             }
         } finally {

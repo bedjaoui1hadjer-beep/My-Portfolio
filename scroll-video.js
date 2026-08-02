@@ -161,16 +161,16 @@
     const skillsRight = document.getElementById("scrollSkillsRight");
     const SKILL_STAGES = [
         {
-            left: { icon: "fa-code", title: "Languages", skills: ["JavaScript", "PHP", "Java", "Python", "Dart", "SQL"] },
-            right: { icon: "fa-toolbox", title: "Tools", skills: ["Git & GitHub", "Docker", "VS Code", "XAMPP", "n8n"] },
+            left: { icon: "fa-code", titleEn: "Languages", titleFr: "Langages", skills: ["JavaScript", "PHP", "Java", "Python", "Dart", "SQL"] },
+            right: { icon: "fa-toolbox", titleEn: "Tools", titleFr: "Outils", skills: ["Git & GitHub", "Docker", "VS Code", "XAMPP", "n8n"] },
         },
         {
-            left: { icon: "fa-server", title: "Backend", skills: ["Laravel", "PHP", "MySQL", "REST APIs", "Authentication"] },
-            right: { icon: "fa-display", title: "Frontend", skills: ["HTML5 & CSS3", "React", "Flutter", "Responsive Design"] },
+            left: { icon: "fa-server", titleEn: "Backend", titleFr: "Backend", skills: ["Laravel", "PHP", "MySQL", "REST APIs", "Authentication"] },
+            right: { icon: "fa-display", titleEn: "Frontend", titleFr: "Frontend", skills: ["HTML5 & CSS3", "React", "Flutter", "Responsive Design"] },
         },
         {
-            left: { icon: "fa-lightbulb", title: "Concepts", skills: ["OOP", "MVC", "Clean Architecture", "API Design", "Data Structures"] },
-            right: { icon: "fa-bullseye", title: "Focus", skills: ["UI/UX", "Full-Stack Apps", "Mobile Development"] },
+            left: { icon: "fa-lightbulb", titleEn: "Concepts", titleFr: "Concepts", skills: ["OOP", "MVC", "Clean Architecture", "API Design", "Data Structures"] },
+            right: { icon: "fa-bullseye", titleEn: "Focus", titleFr: "Spécialités", skills: ["UI/UX", "Full-Stack Apps", "Mobile Development"] },
         },
     ];
     let currentPanelKey = null;
@@ -179,8 +179,10 @@
     // skills grid below, so the scroll-synced panels match its design.
     function renderPanel(el, data) {
         if (!el || !data) return;
+        const lang = window.currentLang === "fr" ? "fr" : "en";
+        const title = lang === "fr" ? data.titleFr : data.titleEn;
         el.innerHTML =
-            `<h3><i class="fa-solid ${data.icon}"></i> ${data.title}</h3>` +
+            `<h3><i class="fa-solid ${data.icon}"></i> ${title}</h3>` +
             `<div class="skill-tags">${data.skills.map((s) => `<span>${s}</span>`).join("")}</div>`;
         el.classList.remove("is-transitioning");
         // Force reflow so the animation can retrigger on repeated stage changes
@@ -277,4 +279,11 @@
         updatePinState();
         updateFrameFromScroll();
     });
+
+    // Called by the language switcher after toggling EN/FR, since the
+    // panels only normally re-render when the scroll stage changes.
+    window.refreshSkillPanelsLanguage = function () {
+        currentPanelKey = null;
+        updateSkillsFromProgress(getScrollProgress());
+    };
 })();

@@ -26,63 +26,67 @@
 
 <canvas id="three-canvas"></canvas>
 
+<button id="langSwitcher" type="button" aria-label="Traduire en français" title="Traduire en français">
+    <span class="lang-switcher-label" id="langSwitcherLabel">FR</span>
+</button>
+
 <div id="real-site">
     <header>
         <div class="div-list ">
             <ul class="ul-list">
                 <li class="active">
                     <i class="fa-solid fa-circle-user"></i>
-                    <a href="#home">Home</a>
+                    <a href="#home" data-fr="Accueil">Home</a>
                 </li>
                 <li>
                     <i class="fa-regular fa-address-card"></i>
-                    <a href="#about">About</a>
+                    <a href="#about" data-fr="À propos">About</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-layer-group"></i>
-                    <a href="#skills">Skills</a>
+                    <a href="#skills" data-fr="Compétences">Skills</a>
                 </li>
                 <li>
                     <i class="fa-regular fa-folder-open"></i>
-                    <a href="#project">Projects</a>
+                    <a href="#project" data-fr="Projets">Projects</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-code"></i>
-                    <a href="#service">services</a>
+                    <a href="#service" data-fr="Services">services</a>
                 </li>
                 <li>
                     <i class="fa-regular fa-envelope"></i>
-                    <a href="#contact">Contact</a>
+                    <a href="#contact" data-fr="Contact">Contact</a>
                 </li>
             </ul>
         </div>
     </header>
 
     <section class="home" id="home">
-        <p class="home-p">
+        <p class="home-p" data-fr="Disponible pour du travail freelance">
            Available for freelance work</p>
         <div class="home-container">
         <div class="home-section">
             <div class="info-home">
-                <h1>Hi, I'm Hadjer</h1>
-                <h3>Full-Stack Developer • Mobile App Developer • Software Engineer</h3>
+                <h1 data-fr="Salut, je suis Hadjer">Hi, I'm Hadjer</h1>
+                <h3 data-fr="Développeuse Full-Stack • Développeuse d'applications mobiles • Ingénieure logicielle">Full-Stack Developer • Mobile App Developer • Software Engineer</h3>
                 <div class="info-p">
-                   <p>Full-Stack and Mobile Developer specializing in scalable web applications, workflow automation with n8n, REST APIs, and cross-platform mobile development.</p>
+                   <p data-fr="Développeuse Full-Stack et Mobile spécialisée dans les applications web évolutives, l'automatisation des flux avec n8n, les API REST et le développement mobile multiplateforme.">Full-Stack and Mobile Developer specializing in scalable web applications, workflow automation with n8n, REST APIs, and cross-platform mobile development.</p>
                 </div>
                 <div class="info-p2">
-                    <p><i class="fa-solid fa-location-dot"></i> Based in Annaba, Algeria</p>
-                    <p><i class="fa-solid fa-briefcase"></i> Available Now</p>
+                    <p><i class="fa-solid fa-location-dot"></i> <span data-fr="Basée à Annaba, Algérie">Based in Annaba, Algeria</span></p>
+                    <p><i class="fa-solid fa-briefcase"></i> <span data-fr="Disponible maintenant">Available Now</span></p>
                 </div>
                 <div class="btnn">
-                    <button class="btn-home1" id="hireMeBtn"><i class="fa-solid fa-arrow-right"></i> Hire Me</button>
-                    <button class="btn-home2" id="downloadCvBtn"><i class="fa-solid fa-download"></i> Download CV</button>
-                    <a href="Resume_Bedjaoui_Hadjer.pdf" target="_blank" class="btn-home2"><i class="fa-solid fa-file-lines"></i> View Resume</a>
+                    <button class="btn-home1" id="hireMeBtn"><i class="fa-solid fa-arrow-right"></i> <span data-fr="Engagez-moi">Hire Me</span></button>
+                    <button class="btn-home2" id="downloadCvBtn"><i class="fa-solid fa-download"></i> <span data-fr="Télécharger le CV">Download CV</span></button>
+                    <a href="Resume_Bedjaoui_Hadjer.pdf" target="_blank" class="btn-home2"><i class="fa-solid fa-file-lines"></i> <span data-fr="Voir le CV">View Resume</span></a>
                 </div>
                 <div class="hhr">
                     <hr>
                 </div>
                 <div class="follow">
-                    <p class="followw">Follow me:</p>
+                    <p class="followw" data-fr="Suivez-moi :">Follow me:</p>
                     <ul>
                         <li><a href="https://github.com/bedjaoui1hadjer-beep"><i class="fa-brands fa-github"></i></a></li>
                         <li><a href="https://www.linkedin.com/in/bedjaoui-hadjer-282028381"><i class="fa-brands fa-linkedin"></i></a></li>
@@ -106,23 +110,23 @@
             </div>
             <div class="info-text">
                 <h5>@Hadjer</h5>
-                <p>Full-Stack & Mobile Developer</p>
+                <p data-fr="Développeuse Full-Stack & Mobile">Full-Stack & Mobile Developer</p>
             </div>
         </div>
-        <h3>ABOUT ME</h3>
+        <h3 data-fr="À PROPOS DE MOI">ABOUT ME</h3>
         <div class="about-info2">
             <div class="about-text slide-in-left">
-                <p>Hi! I'm Bedjaoui Hadjer, a Full-Stack and Mobile Developer <br> based in Annaba, Algeria.</p>
-                <p>I'm Bedjaoui Hadjer, a Full-Stack and Mobile Developer with a Bachelor's Degree in Computer Science.</p>
-                <p>I build scalable web applications, mobile apps, REST APIs, and workflow automation solutions. I enjoy creating clean architectures, modern UI/UX, and high-performance software using PHP, Laravel, React, Flutter, MySQL, Java, and automation tools such as n8n.</p>
-                <p>As a fast learner and proactive builder, I continuously expand my skills to stay aligned with modern software development practices and emerging technologies.</p>
+                <p data-fr="Salut ! Je suis Bedjaoui Hadjer, une développeuse Full-Stack et Mobile <br> basée à Annaba, Algérie.">Hi! I'm Bedjaoui Hadjer, a Full-Stack and Mobile Developer <br> based in Annaba, Algeria.</p>
+                <p data-fr="Je suis Bedjaoui Hadjer, une développeuse Full-Stack et Mobile titulaire d'une licence en informatique.">I'm Bedjaoui Hadjer, a Full-Stack and Mobile Developer with a Bachelor's Degree in Computer Science.</p>
+                <p data-fr="Je conçois des applications web évolutives, des applications mobiles, des API REST et des solutions d'automatisation. J'aime créer des architectures propres, des interfaces UI/UX modernes et des logiciels performants avec PHP, Laravel, React, Flutter, MySQL, Java et des outils comme n8n.">I build scalable web applications, mobile apps, REST APIs, and workflow automation solutions. I enjoy creating clean architectures, modern UI/UX, and high-performance software using PHP, Laravel, React, Flutter, MySQL, Java, and automation tools such as n8n.</p>
+                <p data-fr="Apprenant rapidement et toujours proactive, j'élargis continuellement mes compétences pour rester alignée avec les pratiques modernes du développement logiciel et les technologies émergentes.">As a fast learner and proactive builder, I continuously expand my skills to stay aligned with modern software development practices and emerging technologies.</p>
             </div>
             
 
             <div class="right">
                 <div class="right-head">
-                    <span>CORE UI</span>
-                    <span class="online">ONLINE</span>
+                    <span data-fr="SYSTÈME UI">CORE UI</span>
+                    <span class="online" data-fr="EN LIGNE">ONLINE</span>
                 </div>
 
                 <div class="orbit-box">
@@ -134,7 +138,7 @@
                     </div>
 
                     <div class="core">
-                        <span>WELCOME</span>
+                        <span data-fr="BIENVENUE">WELCOME</span>
                     </div>
                 </div>
 
@@ -146,32 +150,32 @@
         <div class="stats-grid">
             <div class="stat-item slide-in-up">
                 <span class="stat-number">15+</span>
-                <span class="stat-label">Projects Completed</span>
+                <span class="stat-label" data-fr="Projets réalisés">Projects Completed</span>
             </div>
             <div class="stat-item slide-in-up">
                 <span class="stat-number">10+</span>
-                <span class="stat-label">Technologies</span>
+                <span class="stat-label" data-fr="Technologies">Technologies</span>
             </div>
             <div class="stat-item slide-in-up">
                 <span class="stat-number">3+</span>
-                <span class="stat-label">Years Learning</span>
+                <span class="stat-label" data-fr="Années d'apprentissage">Years Learning</span>
             </div>
             <div class="stat-item slide-in-up">
                 <span class="stat-number">100%</span>
-                <span class="stat-label">Responsive Designs</span>
+                <span class="stat-label" data-fr="Designs Responsives">Responsive Designs</span>
             </div>
         </div>
     </section>
 
     <section class="skills-section reveal" id="skills">
-        <p>SKILLS</p>
-        <h1>What I Work With</h1>
+        <p data-fr="COMPÉTENCES">SKILLS</p>
+        <h1 data-fr="Avec quoi je travaille">What I Work With</h1>
         <hr>
 
         <div class="scroll-video-section" id="scroll-video">
             <div class="scroll-video-sticky">
                 <div class="skill-category scroll-skill-card scroll-skill-card-left slide-in-up" id="scrollSkillsLeft">
-                    <h3><i class="fa-solid fa-code"></i> Languages</h3>
+                    <h3><i class="fa-solid fa-code"></i> <span data-fr="Langages">Languages</span></h3>
                     <div class="skill-tags">
                         <span>JavaScript</span>
                         <span>PHP</span>
@@ -183,7 +187,7 @@
                 </div>
                 <canvas id="scrollVideoCanvas"></canvas>
                 <div class="skill-category scroll-skill-card scroll-skill-card-right slide-in-up" id="scrollSkillsRight">
-                    <h3><i class="fa-solid fa-display"></i> Frontend</h3>
+                    <h3><i class="fa-solid fa-display"></i> <span data-fr="Frontend">Frontend</span></h3>
                     <div class="skill-tags">
                         <span>HTML5 &amp; CSS3</span>
                         <span>React</span>
@@ -192,7 +196,7 @@
                     </div>
                 </div>
                 <div class="scroll-video-caption">
-                    <span>Scroll to explore</span>
+                    <span data-fr="Défiler pour explorer">Scroll to explore</span>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
             </div>
@@ -227,14 +231,14 @@
     </section>
 
     <section class="timeline-section reveal" id="timeline">
-        <p>JOURNEY</p>
-        <h1>Timeline</h1>
+        <p data-fr="PARCOURS">JOURNEY</p>
+        <h1 data-fr="Chronologie">Timeline</h1>
         <hr>
         <div class="timeline">
             <div class="timeline-item slide-in-left">
                 <span class="timeline-date">2026</span>
                 <div class="timeline-content">
-                    <h3>Bachelor's Degree in Computer Science</h3>
+                    <h3 data-fr="Licence en informatique">Bachelor's Degree in Computer Science</h3>
                 </div>
             </div>
             <div class="timeline-item slide-in-right">
@@ -252,32 +256,32 @@
             <div class="timeline-item slide-in-right">
                 <span class="timeline-date">2025</span>
                 <div class="timeline-content">
-                    <h3>Java Desktop System</h3>
+                    <h3 data-fr="Système de bureau Java">Java Desktop System</h3>
                 </div>
             </div>
             <div class="timeline-item slide-in-left">
                 <span class="timeline-date">2025</span>
                 <div class="timeline-content">
-                    <h3>Flutter Mobile Apps</h3>
+                    <h3 data-fr="Applications mobiles Flutter">Flutter Mobile Apps</h3>
                 </div>
             </div>
         </div>
     </section>
 
      <section class="project  reveal" id="project">
-        <p>PROJECTS</p>
-        <h1>Featured Work</h1>
+        <p data-fr="PROJETS">PROJECTS</p>
+        <h1 data-fr="Travaux à la une">Featured Work</h1>
         <hr>
         <div class="info-pro">
-            <p>A showcase of my recent projects demonstrating expertise in full-stack </p>
-            <p>development, modern frameworks, and creative problem-solving.</p>
+            <p data-fr="Une vitrine de mes projets récents démontrant une expertise en full-stack ">A showcase of my recent projects demonstrating expertise in full-stack </p>
+            <p data-fr="développement, frameworks modernes et résolution créative de problèmes.">development, modern frameworks, and creative problem-solving.</p>
         </div>
         <div class="projects-container">
 
     <div class="project-card slide-in-up">
       <img src="images/DZHouse.png" alt="DZHouse Rental Platform">
-      <h3>DZHouse — Rental Platform</h3>
-      <p>Full-stack property rental marketplace built with Laravel 13 and REST APIs for the Algerian market. Includes secure authentication, multilingual support (EN/AR/FR), property listings, booking management, real-time messaging, reviews, favorites, notifications, owner analytics, and role-based dashboards, powered by a scalable MVC architecture.</p>
+      <h3 data-fr="DZHouse — Plateforme de location">DZHouse — Rental Platform</h3>
+      <p data-fr="Marketplace full-stack de location immobilière conçu avec Laravel 13 et des API REST pour le marché algérien. Comprend une authentification sécurisée, un support multilingue (EN/AR/FR), des annonces immobilières, une gestion des réservations, une messagerie en temps réel, des avis, des favoris, des notifications, des statistiques pour les propriétaires, et des tableaux de bord selon les rôles, le tout sur une architecture MVC évolutive.">Full-stack property rental marketplace built with Laravel 13 and REST APIs for the Algerian market. Includes secure authentication, multilingual support (EN/AR/FR), property listings, booking management, real-time messaging, reviews, favorites, notifications, owner analytics, and role-based dashboards, powered by a scalable MVC architecture.</p>
       <div class="skills">
        <a href="#">Laravel</a>
        <a href="#">PHP</a>
@@ -288,14 +292,14 @@
           </div>
       <div class="btns">
         <a href="https://github.com/bedjaoui1hadjer-beep/DZHouse" class="btn"><i class="fab fa-github"></i> GitHub</a>
-        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> <span data-fr="Démo en direct">Live Demo</span></a>
       </div>
     </div>
 
     <div class="project-card slide-in-up">
       <img src="images/PSYRA.png" alt="PSYRA Platform">
-      <h3>PSYRA — Mental Health Support Platform</h3>
-      <p>Mental health support platform developed with Laravel, featuring clinically validated PHQ-9 and GAD-7 assessments, personalized self-care resources, anonymized therapist analytics, dual-mode privacy architecture, automated workflows powered by n8n, PSYRA Talk, and a dedicated Kids Zone.</p>
+      <h3 data-fr="PSYRA — Plateforme de soutien en santé mentale">PSYRA — Mental Health Support Platform</h3>
+      <p data-fr="Plateforme de soutien en santé mentale développée avec Laravel, proposant des évaluations PHQ-9 et GAD-7 cliniquement validées, des ressources personnalisées d'auto-soin, des statistiques anonymisées pour les thérapeutes, une architecture de confidentialité à double mode, des flux automatisés via n8n, PSYRA Talk, et un espace dédié aux enfants.">Mental health support platform developed with Laravel, featuring clinically validated PHQ-9 and GAD-7 assessments, personalized self-care resources, anonymized therapist analytics, dual-mode privacy architecture, automated workflows powered by n8n, PSYRA Talk, and a dedicated Kids Zone.</p>
       <div class="skills">
         <a href="#">Laravel</a>
         <a href="#">PHP</a>
@@ -306,15 +310,15 @@
       </div>
       <div class="btns">
         <a href="https://github.com/bedjaoui1hadjer-beep/Psyra" class="btn"><i class="fab fa-github"></i> GitHub</a>
-        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> <span data-fr="Démo en direct">Live Demo</span></a>
       </div>
     </div>
 <div class="project-card slide-in-up">
   <img src="images/Aurora.png" alt="Aurora Attention Recovery System">
 
-  <h3>AURORA — Digital Attention Recovery Platform</h3>
+  <h3 data-fr="AURORA — Plateforme numérique de récupération de l'attention">AURORA — Digital Attention Recovery Platform</h3>
   <p>
-  Aurora is a cross-platform digital wellbeing app built with Expo (React Native) that helps users recover attention through cognitive assessment, focus training, habit tracking, guided sessions, and progress analytics in a modern glassmorphism interface.
+  <span data-fr="Aurora est une application de bien-être numérique multiplateforme conçue avec Expo (React Native) qui aide les utilisateurs à retrouver leur attention grâce à des évaluations cognitives, un entraînement à la concentration, un suivi des habitudes, des sessions guidées et des statistiques de progression, le tout dans une interface glassmorphism moderne.">Aurora is a cross-platform digital wellbeing app built with Expo (React Native) that helps users recover attention through cognitive assessment, focus training, habit tracking, guided sessions, and progress analytics in a modern glassmorphism interface.</span>
 </p>
 
   <div class="skills">
@@ -336,15 +340,15 @@
     <a href="https://aurora-sigma-ochre.vercel.app"
        class="btn"
        target="_blank">
-      <i class="fas fa-external-link-alt"></i> Live Demo
+      <i class="fas fa-external-link-alt"></i> <span data-fr="Démo en direct">Live Demo</span>
     </a>
   </div>
 </div>
 
     <div class="project-card slide-in-up">
       <img src="images/PSYRA TALK.png" alt="Mental Health Assistant">
-      <h3>PSYRA Talk</h3>
-      <p>24/7 conversational mental health assistant designed to support users experiencing stress, anxiety, and burnout. It provides empathetic guidance, personalized coping strategies, and automated crisis escalation workflows while protecting user privacy by keeping conversations stateless without storing chat history.</p>
+      <h3 data-fr="PSYRA Talk">PSYRA Talk</h3>
+      <p data-fr="Assistant conversationnel de santé mentale disponible 24h/24 et 7j/7, conçu pour accompagner les utilisateurs face au stress, à l'anxiété et à l'épuisement. Il propose des conseils empathiques, des stratégies d'adaptation personnalisées et des flux d'escalade automatisés en cas de crise, tout en protégeant la vie privée grâce à des conversations sans historique conservé.">24/7 conversational mental health assistant designed to support users experiencing stress, anxiety, and burnout. It provides empathetic guidance, personalized coping strategies, and automated crisis escalation workflows while protecting user privacy by keeping conversations stateless without storing chat history.</p>
       <div class="skills">
         <a href="#">n8n</a>
         <a href="#">Python</a>
@@ -352,14 +356,14 @@
       </div>
       <div class="btns">
         <a href="#" class="btn"><i class="fab fa-github"></i> GitHub</a>
-        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> <span data-fr="Démo en direct">Live Demo</span></a>
       </div>
     </div>
 
     <div class="project-card slide-in-up">
       <img src="images/Portfolio.png" alt="Portfolio Website">
-      <h3>Portfolio Website</h3>
-      <p>Personal developer portfolio showcasing projects, skills, and services with modern UI design, smooth animations, and fully responsive layout.</p>
+      <h3 data-fr="Site Portfolio">Portfolio Website</h3>
+      <p data-fr="Portfolio personnel de développeuse présentant projets, compétences et services, avec un design UI moderne, des animations fluides et une mise en page entièrement responsive.">Personal developer portfolio showcasing projects, skills, and services with modern UI design, smooth animations, and fully responsive layout.</p>
       <div class="skills">
         <a href="#">HTML</a>
         <a href="#">CSS</a>
@@ -367,53 +371,53 @@
       </div>
       <div class="btns">
         <a href="https://github.com/bedjaoui1hadjer-beep/My-Portfolio" class="btn"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://my-portfolio-e61.pages.dev/" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <a href="https://my-portfolio-e61.pages.dev/" class="btn"><i class="fas fa-external-link-alt"></i> <span data-fr="Démo en direct">Live Demo</span></a>
       </div>
     </div>
   </div>
      </section>
 
     <section class="why-hire-section reveal" id="why-hire">
-        <p>WHY ME</p>
-        <h1>Why Hire Me?</h1>
+        <p data-fr="POURQUOI MOI">WHY ME</p>
+        <h1 data-fr="Pourquoi m'engager ?">Why Hire Me?</h1>
         <hr>
         <div class="why-hire-grid">
             <div class="why-hire-card slide-in-up">
                 <i class="fa-solid fa-code"></i>
-                <h3>Clean Code</h3>
-                <p>Readable, maintainable code following best practices and clean architecture principles.</p>
+                <h3 data-fr="Code Propre">Clean Code</h3>
+                <p data-fr="Code lisible et maintenable, respectant les bonnes pratiques et les principes d'architecture propre.">Readable, maintainable code following best practices and clean architecture principles.</p>
             </div>
             <div class="why-hire-card slide-in-up">
                 <i class="fa-solid fa-mobile-screen"></i>
-                <h3>Responsive Design</h3>
-                <p>Interfaces that look and work great on every screen, from desktop to mobile.</p>
+                <h3 data-fr="Design Responsive">Responsive Design</h3>
+                <p data-fr="Des interfaces qui s'affichent et fonctionnent parfaitement sur tous les écrans, du bureau au mobile.">Interfaces that look and work great on every screen, from desktop to mobile.</p>
             </div>
             <div class="why-hire-card slide-in-up">
                 <i class="fa-solid fa-bolt"></i>
-                <h3>Fast Performance</h3>
-                <p>Optimized applications built for speed, efficiency, and a smooth user experience.</p>
+                <h3 data-fr="Performance Rapide">Fast Performance</h3>
+                <p data-fr="Des applications optimisées pour la rapidité, l'efficacité et une expérience utilisateur fluide.">Optimized applications built for speed, efficiency, and a smooth user experience.</p>
             </div>
             <div class="why-hire-card slide-in-up">
                 <i class="fa-solid fa-diagram-project"></i>
-                <h3>Workflow Automation</h3>
-                <p>Building reliable automation workflows with n8n and API integrations that streamline business processes.</p>
+                <h3 data-fr="Automatisation des Flux de Travail">Workflow Automation</h3>
+                <p data-fr="Création de flux d'automatisation fiables avec n8n et des intégrations API qui simplifient les processus métier.">Building reliable automation workflows with n8n and API integrations that streamline business processes.</p>
             </div>
             <div class="why-hire-card slide-in-up">
                 <i class="fa-solid fa-layer-group"></i>
-                <h3>Full-Stack Expertise</h3>
-                <p>Comfortable across web, mobile, backend, and database layers of a project.</p>
+                <h3 data-fr="Expertise Full-Stack">Full-Stack Expertise</h3>
+                <p data-fr="À l'aise sur toutes les couches d'un projet : web, mobile, backend et base de données.">Comfortable across web, mobile, backend, and database layers of a project.</p>
             </div>
             <div class="why-hire-card slide-in-up">
                 <i class="fa-solid fa-comments"></i>
-                <h3>Strong Communication</h3>
-                <p>Clear, proactive communication that keeps projects on track from start to finish.</p>
+                <h3 data-fr="Communication Solide">Strong Communication</h3>
+                <p data-fr="Une communication claire et proactive qui maintient les projets sur la bonne voie du début à la fin.">Clear, proactive communication that keeps projects on track from start to finish.</p>
             </div>
         </div>
     </section>
 
         <section id="service" class="section services reveal">
-            <p>SERVICES</p>
-            <h1>What I Offer</h1>
+            <p data-fr="SERVICES">SERVICES</p>
+            <h1 data-fr="Ce que je propose">What I Offer</h1>
             <hr>
             <div class="container">
                 <div class="services-content">
@@ -422,8 +426,8 @@
                             <div class="service-icon">
                                 <i class="fas fa-code"></i>
                             </div>
-                            <h3>Full-Stack Web Development</h3>
-                            <p>Building complete, database-driven web applications from scratch — responsive frontends, secure backends, and seamless API integrations using HTML, CSS, JavaScript, PHP, and MySQL.</p>
+                            <h3 data-fr="Développement Web Full-Stack">Full-Stack Web Development</h3>
+                            <p data-fr="Création d'applications web complètes basées sur des bases de données, de A à Z — frontends responsives, backends sécurisés et intégrations API fluides avec HTML, CSS, JavaScript, PHP et MySQL.">Building complete, database-driven web applications from scratch — responsive frontends, secure backends, and seamless API integrations using HTML, CSS, JavaScript, PHP, and MySQL.</p>
                             <div class="service-features">
                                 <span>Responsive Design</span>
                                 <span>PHP & MySQL</span>
@@ -434,8 +438,8 @@
                             <div class="service-icon">
                                 <i class="fas fa-diagram-project"></i>
                             </div>
-                            <h3>Workflow Automation & Platform Integration</h3>
-                            <p>Designing and building web platforms with workflow automation, conversational systems, API integrations, and automated escalation pipelines using n8n.</p>
+                            <h3 data-fr="Automatisation des Flux & Intégration de Plateformes">Workflow Automation & Platform Integration</h3>
+                            <p data-fr="Conception et création de plateformes web avec automatisation des flux, systèmes conversationnels, intégrations API et pipelines d'escalade automatisés via n8n.">Designing and building web platforms with workflow automation, conversational systems, API integrations, and automated escalation pipelines using n8n.</p>
                             <div class="service-features">
                                 <span>n8n Automation</span>
                                 <span>Workflow Automation</span>
@@ -446,20 +450,20 @@
                             <div class="service-icon">
                                 <i class="fas fa-palette"></i>
                             </div>
-                            <h3>UI/UX Design</h3>
-                            <p>Designing intuitive and visually polished interfaces that deliver exceptional user experiences — modern layouts, component systems, and responsive design across all devices.</p>
+                            <h3 data-fr="Design UI/UX">UI/UX Design</h3>
+                            <p data-fr="Conception d'interfaces intuitives et soignées offrant une expérience utilisateur exceptionnelle — mises en page modernes, systèmes de composants et design responsive sur tous les appareils.">Designing intuitive and visually polished interfaces that deliver exceptional user experiences — modern layouts, component systems, and responsive design across all devices.</p>
                             <div class="service-features">
-                                <span>Modern Aesthetics</span>
-                                <span>Component Design</span>
-                                <span>Accessibility</span>
+                                <span data-fr="Esthétique Moderne">Modern Aesthetics</span>
+                                <span data-fr="Design de Composants">Component Design</span>
+                                <span data-fr="Accessibilité">Accessibility</span>
                             </div>
                         </div>
                         <div class="service-card slide-in-up">
                             <div class="service-icon">
                                 <i class="fas fa-database"></i>
                             </div>
-                            <h3>Database Design & Integration</h3>
-                            <p>Architecting and integrating relational databases with clean schemas, efficient queries, and full CRUD support — including authentication systems and session management.</p>
+                            <h3 data-fr="Conception & Intégration de Bases de Données">Database Design & Integration</h3>
+                            <p data-fr="Architecture et intégration de bases de données relationnelles avec des schémas propres, des requêtes efficaces et un support CRUD complet — incluant systèmes d'authentification et gestion de sessions.">Architecting and integrating relational databases with clean schemas, efficient queries, and full CRUD support — including authentication systems and session management.</p>
                             <div class="service-features">
                                 <span>MySQL</span>
                                 <span>SQL Optimization</span>
@@ -470,8 +474,8 @@
                             <div class="service-icon">
                                 <i class="fas fa-mobile-screen-button"></i>
                             </div>
-                            <h3>Mobile App Development</h3>
-                            <p>Building cross-platform mobile applications with Flutter and Dart — integrated REST APIs, authentication, local storage, and responsive, native-feeling UI.</p>
+                            <h3 data-fr="Développement d'Applications Mobiles">Mobile App Development</h3>
+                            <p data-fr="Création d'applications mobiles multiplateformes avec Flutter et Dart — API REST intégrées, authentification, stockage local et interface responsive à l'apparence native.">Building cross-platform mobile applications with Flutter and Dart — integrated REST APIs, authentication, local storage, and responsive, native-feeling UI.</p>
                             <div class="service-features">
                                 <span>Flutter & Dart</span>
                                 <span>Cross-Platform</span>
@@ -482,8 +486,8 @@
                             <div class="service-icon">
                                 <i class="fab fa-laravel"></i>
                             </div>
-                            <h3>Laravel Development</h3>
-                            <p>Building robust backend systems and web applications with Laravel — clean MVC architecture, Eloquent ORM, authentication, and secure, scalable APIs.</p>
+                            <h3 data-fr="Développement Laravel">Laravel Development</h3>
+                            <p data-fr="Création de systèmes backend robustes et d'applications web avec Laravel — architecture MVC propre, ORM Eloquent, authentification et API sécurisées et évolutives.">Building robust backend systems and web applications with Laravel — clean MVC architecture, Eloquent ORM, authentication, and secure, scalable APIs.</p>
                             <div class="service-features">
                                 <span>Laravel</span>
                                 <span>MVC</span>
@@ -494,8 +498,8 @@
                             <div class="service-icon">
                                 <i class="fas fa-plug"></i>
                             </div>
-                            <h3>REST API Development</h3>
-                            <p>Designing and building secure, well-documented REST APIs with proper authentication, validation, and clean resource structures for web and mobile clients.</p>
+                            <h3 data-fr="Développement d'API REST">REST API Development</h3>
+                            <p data-fr="Conception et création d'API REST sécurisées et bien documentées, avec authentification, validation et structures de ressources propres pour les clients web et mobiles.">Designing and building secure, well-documented REST APIs with proper authentication, validation, and clean resource structures for web and mobile clients.</p>
                             <div class="service-features">
                                 <span>REST APIs</span>
                                 <span>Authentication</span>
@@ -506,8 +510,8 @@
                             <div class="service-icon">
                                 <i class="fas fa-laptop-code"></i>
                             </div>
-                            <h3>Desktop App Development</h3>
-                            <p>Developing desktop applications using Java with full OOP architecture, Swing graphical interfaces, and MySQL database connectivity for data management solutions.</p>
+                            <h3 data-fr="Développement d'Applications de Bureau">Desktop App Development</h3>
+                            <p data-fr="Développement d'applications de bureau en Java avec une architecture orientée objet complète, des interfaces graphiques Swing et une connectivité MySQL pour la gestion des données.">Developing desktop applications using Java with full OOP architecture, Swing graphical interfaces, and MySQL database connectivity for data management solutions.</p>
                             <div class="service-features">
                                 <span>Java & Swing</span>
                                 <span>OOP Architecture</span>
@@ -521,10 +525,10 @@
 
          <section id="contact" class="section reveal">
             <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-fr="Contactez-moi">Get In Touch</h2>
                 <div class="contact-content">
                     <div class="contact-info slide-in-left">
-                        <p>Let's collaborate! I am always open to discussing exciting projects and new opportunities.</p>
+                        <p data-fr="Collaborons ! Je suis toujours ouverte à discuter de projets passionnants et de nouvelles opportunités.">Let's collaborate! I am always open to discussing exciting projects and new opportunities.</p>
                         <div class="contact-details">
                             <div class="contact-item">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -542,7 +546,7 @@
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                                 </svg>
-                                <span>Annaba, Algeria</span>
+                                <span data-fr="Annaba, Algérie">Annaba, Algeria</span>
                             </div>
                         </div>
                         <div class="social-links">
@@ -569,15 +573,15 @@
                             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
                             <div class="form-group">
-                                <input type="text" placeholder="Your Name" required name="name">
+                                <input type="text" placeholder="Your Name" data-fr-placeholder="Votre nom" required name="name">
                             </div>
                             <div class="form-group">
-                                <input type="email" placeholder="Your Email" required name="email">
+                                <input type="email" placeholder="Your Email" data-fr-placeholder="Votre email" required name="email">
                             </div>
                             <div class="form-group">
-                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                                <textarea name="message" placeholder="Your Message" data-fr-placeholder="Votre message" rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="btn" id="contact-submit-btn">Send Message</button>
+                            <button type="submit" class="btn" id="contact-submit-btn"><span data-fr="Envoyer le message">Send Message</span></button>
                             <p id="contact-form-status"></p>
                         </form>
                     </div>
