@@ -56,10 +56,6 @@
     function getBoxSize() {
         const availableH = window.innerHeight - navbarHeight;
         const isCompact = window.innerWidth <= 1100;
-        // On mobile only one skill card shows at a time (see
-        // updateSkillsFromProgress), so reserve exactly its real height
-        // instead of guessing a fixed percentage — that guessing is what
-        // was causing the card to get clipped.
         const reserved = isCompact ? getReservedHeight() : 0;
         const maxH = isCompact
             ? Math.max(availableH - reserved, availableH * 0.35)
@@ -132,12 +128,21 @@
         return Math.min(Math.max(scrolled / scrollableDistance, 0), 1);
     }
 
+    // The video plays through this fraction of the scroll, then holds on
+    // its last frame instead of animating (or repeating) any further.
+    const VIDEO_PHASE_END = 0.65;
+
+    function getFrameProgress(progress) {
+        return Math.min(progress / VIDEO_PHASE_END, 1);
+    }
+
     function updateFrameFromScroll() {
         const progress = getScrollProgress();
+        const frameProgress = getFrameProgress(progress);
 
         const frameIndex = Math.min(
             TOTAL_FRAMES - 1,
-            Math.floor(progress * (TOTAL_FRAMES - 1))
+            Math.floor(frameProgress * (TOTAL_FRAMES - 1))
         );
 
         if (frameIndex !== currentFrame) {
@@ -145,6 +150,10 @@
             drawFrame(frameIndex);
         }
 
+        // Cards run across the whole scroll range (not just after the video
+        // ends), so they keep transitioning while the video plays and have
+        // passed through all of them by the time the scroll — and video —
+        // finish.
         updateSkillsFromProgress(progress);
     }
 
