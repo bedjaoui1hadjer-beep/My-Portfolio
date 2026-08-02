@@ -844,7 +844,17 @@ hr {
 }
 
 .scroll-skill-card.is-transitioning {
-    animation: skillsFade 0.5s ease;
+    animation: skillsFade 0.5s ease forwards;
+}
+
+/* These cards are revealed by the scroll-driven skillsFade animation above,
+   not by the slide-in-up scroll observer (which never fires for them since
+   they sit at display:none part of the time on mobile). Neutralize
+   slide-in-up's hidden base state so they don't depend on that observer. */
+.scroll-skill-card.slide-in-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
 }
 
 @keyframes skillsFade {
