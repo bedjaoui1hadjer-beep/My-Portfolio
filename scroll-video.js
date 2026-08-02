@@ -41,12 +41,29 @@
     const ASPECT_W = 9;
     const ASPECT_H = 16;
 
+    function getReservedHeight() {
+        if (window.innerWidth > 1100) return 0;
+        const gap = 12; // matches the mobile .scroll-video-sticky gap
+        const padding = 20; // matches the mobile .scroll-video-sticky padding
+        const visibleCard =
+            skillsLeft && skillsLeft.style.display !== "none"
+                ? skillsLeft
+                : skillsRight;
+        const cardH = visibleCard ? visibleCard.offsetHeight : 0;
+        return cardH + gap + padding;
+    }
+
     function getBoxSize() {
         const availableH = window.innerHeight - navbarHeight;
         const isCompact = window.innerWidth <= 1100;
-        // On mobile the skill cards stack above/below the video instead of
-        // beside it, so the canvas needs to leave room for them.
-        const maxH = availableH * (isCompact ? 0.56 : 0.9);
+        // On mobile only one skill card shows at a time (see
+        // updateSkillsFromProgress), so reserve exactly its real height
+        // instead of guessing a fixed percentage — that guessing is what
+        // was causing the card to get clipped.
+        const reserved = isCompact ? getReservedHeight() : 0;
+        const maxH = isCompact
+            ? Math.max(availableH - reserved, availableH * 0.35)
+            : availableH * 0.9;
         const maxW = window.innerWidth * (isCompact ? 0.86 : 0.92);
 
         let h = maxH;
@@ -107,14 +124,16 @@
         }
     }
 
-    function updateFrameFromScroll() {
-        const rect = section.getBoundingClientRect();
+    function getScrollProgress() {
         const scrollableDistance = section.offsetHeight - window.innerHeight;
-        if (scrollableDistance <= 0) return;
-
+        if (scrollableDistance <= 0) return 0;
+        const rect = section.getBoundingClientRect();
         const scrolled = -rect.top;
-        let progress = scrolled / scrollableDistance;
-        progress = Math.min(Math.max(progress, 0), 1);
+        return Math.min(Math.max(scrolled / scrollableDistance, 0), 1);
+    }
+
+    function updateFrameFromScroll() {
+        const progress = getScrollProgress();
 
         const frameIndex = Math.min(
             TOTAL_FRAMES - 1,
@@ -145,7 +164,7 @@
             right: { icon: "fa-bullseye", title: "Focus", skills: ["UI/UX", "Full-Stack Apps", "Mobile Development"] },
         },
     ];
-    let currentStage = -1;
+    let currentPanelKey = null;
 
     // Renders the same skill-category card markup used in the static
     // skills grid below, so the scroll-synced panels match its design.
@@ -160,17 +179,60 @@
         el.classList.add("is-transitioning");
     }
 
+    function setCardVisibility(isCompact, visibleSide) {
+        if (!isCompact) {
+            if (skillsLeft) skillsLeft.style.display = "";
+            if (skillsRight) skillsRight.style.display = "";
+            return;
+        }
+        if (skillsLeft) {
+            skillsLeft.style.display = visibleSide === "left" ? "" : "none";
+        }
+        if (skillsRight) {
+            skillsRight.style.display = visibleSide === "right" ? "" : "none";
+        }
+    }
+
     function updateSkillsFromProgress(progress) {
         if (!skillsLeft && !skillsRight) return;
-        const stageIndex = Math.min(
-            SKILL_STAGES.length - 1,
-            Math.floor(progress * SKILL_STAGES.length)
+        const isCompact = window.innerWidth <= 1100;
+
+        if (!isCompact) {
+            const stageIndex = Math.min(
+                SKILL_STAGES.length - 1,
+                Math.floor(progress * SKILL_STAGES.length)
+            );
+            const key = `desktop-${stageIndex}`;
+            if (key === currentPanelKey) return;
+            currentPanelKey = key;
+            setCardVisibility(false, null);
+            const stage = SKILL_STAGES[stageIndex];
+            renderPanel(skillsLeft, stage.left);
+            renderPanel(skillsRight, stage.right);
+            return;
+        }
+
+        // Mobile: each card gets its own slide instead of both showing
+        // stacked at once — that's what was leaving the top card clipped.
+        const totalSlides = SKILL_STAGES.length * 2;
+        const slideIndex = Math.min(
+            totalSlides - 1,
+            Math.floor(progress * totalSlides)
         );
-        if (stageIndex === currentStage) return;
-        currentStage = stageIndex;
+        const key = `mobile-${slideIndex}`;
+        if (key === currentPanelKey) return;
+        currentPanelKey = key;
+
+        const stageIndex = Math.floor(slideIndex / 2);
+        const side = slideIndex % 2 === 0 ? "left" : "right";
+        setCardVisibility(true, side);
         const stage = SKILL_STAGES[stageIndex];
-        renderPanel(skillsLeft, stage.left);
-        renderPanel(skillsRight, stage.right);
+        renderPanel(side === "left" ? skillsLeft : skillsRight, stage[side]);
+
+        // The newly-visible card likely has a different height, so give the
+        // video the correctly-sized remaining space and redraw at that size.
+        resizeCanvas();
+        drawFrame(Math.max(currentFrame, 0));
     }
 
     let ticking = false;
@@ -188,6 +250,7 @@
         updateNavbarHeight();
         resizeCanvas();
         updatePinState();
+        updateSkillsFromProgress(getScrollProgress());
         drawFrame(Math.max(currentFrame, 0));
     }
 
@@ -195,6 +258,7 @@
     resizeCanvas();
     preloadImages();
     updatePinState();
+    updateSkillsFromProgress(getScrollProgress());
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);

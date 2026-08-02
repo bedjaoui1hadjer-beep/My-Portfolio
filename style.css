@@ -1379,6 +1379,9 @@ html, body {
 
   .info-home h1 {
     font-size: 38px;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
   }
 
   .info-home h3 {
@@ -1543,6 +1546,9 @@ html, body {
 
   .info-home h1 {
     font-size: 28px;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
   }
 
   .info-home h3 {
@@ -1905,6 +1911,4 @@ html, body {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .timeline::before { left: 70px; }
     .timeline-date { flex-basis: 60px; font-size: 11px; }
-    .info-home h1 {
-    background: linear-gradient(100deg, #ff9db3 35%, #ff4d6d 68%, #7a0c2e 100%);}
 }
