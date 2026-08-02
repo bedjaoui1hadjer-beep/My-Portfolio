@@ -853,8 +853,44 @@ hr {
 }
 
 @media (max-width: 1100px) {
+    .scroll-video-sticky {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 0;
+    }
+
     .scroll-skill-card {
+        display: block;
+        width: 88%;
+        max-width: 340px;
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 14px 18px;
+    }
+
+    .scroll-skill-card h3 {
+        font-size: 13.5px;
+        margin-bottom: 10px;
+    }
+
+    .scroll-skill-card .skill-tags {
+        gap: 6px;
+    }
+
+    .scroll-skill-card .skill-tags span {
+        font-size: 10.5px;
+        padding: 4px 10px;
+    }
+
+    .scroll-video-caption {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-skill-card {
+        padding: 12px 14px;
+        width: 94%;
     }
 }
 
@@ -1869,4 +1905,6 @@ html, body {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .timeline::before { left: 70px; }
     .timeline-date { flex-basis: 60px; font-size: 11px; }
+    .info-home h1 {
+    background: linear-gradient(100deg, #ff9db3 35%, #ff4d6d 68%, #7a0c2e 100%);}
 }

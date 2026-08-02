@@ -43,8 +43,11 @@
 
     function getBoxSize() {
         const availableH = window.innerHeight - navbarHeight;
-        const maxH = availableH * 0.9;
-        const maxW = window.innerWidth * 0.92;
+        const isCompact = window.innerWidth <= 1100;
+        // On mobile the skill cards stack above/below the video instead of
+        // beside it, so the canvas needs to leave room for them.
+        const maxH = availableH * (isCompact ? 0.56 : 0.9);
+        const maxW = window.innerWidth * (isCompact ? 0.86 : 0.92);
 
         let h = maxH;
         let w = (h * ASPECT_W) / ASPECT_H;
